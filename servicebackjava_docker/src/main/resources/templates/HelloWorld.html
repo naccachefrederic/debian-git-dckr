@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+	<form th:action="@{/hello/${name}}" th:object="${name}" method="POST">
+		Nom :<input type="text" th:field="${name}" /> <br /> <input
+			type="submit" value="Submit" />
+		<p th:text="Bonjour lulu. Vous etes bien matinal..."></p>
+	</form>
+
+</body>
+</html>
