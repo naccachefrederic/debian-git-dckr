@@ -7,10 +7,10 @@
 	href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
 </head>
 <body>
-	<form th:action="@{/hello/${name}}" th:object="${name}" method="POST">
-		Nom :<input type="text" th:field="${name}" /> <br /> <input
-			type="submit" value="Submit" />
-		<p th:text="Bonjour lulu. Vous etes bien matinal..."></p>
+	<form th:action="@{/hello/${name}}" th:object="${form}" method="GET">
+		Nom :<input type="text" th:field="*{name}" /> <br /> 
+		<input type="submit" value="Submit" />
+		
 	</form>
 
 </body>

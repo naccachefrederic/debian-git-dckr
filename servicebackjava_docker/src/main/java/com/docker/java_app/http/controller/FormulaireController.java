@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.docker.java_app.dao.FormulaireRepository;
+import com.docker.java_app.model.Formulaire;
 
 @Controller
 //@RequestMapping(path="/dockergo")
@@ -16,17 +16,21 @@ public class FormulaireController {
 
 	@Autowired
 	private FormulaireRepository formRepository;
-	
+	      
 	@GetMapping(value="/")
 	public String accueil(Model model) {
-		model.addAttribute("name", "");
+		Formulaire form = new Formulaire();
+		form.setName("");
+		model.addAttribute("form", form);
 		return "HelloWorld";
-	}
-	
-	@PostMapping(value="/hello/{name}")
+	}     
+	 
+	@GetMapping(value="/hello/{name}")
 	public String postHello(@PathVariable String name, Model model) {
-		model.addAttribute("name",name);
-		return "HelloWorld";
+		Formulaire newform = new Formulaire();
+		newform.setName(name);
+		model.addAttribute("newform",newform);
+		return "Valide";
 	
 	}
 }
