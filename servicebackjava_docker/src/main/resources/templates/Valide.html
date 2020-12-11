@@ -5,6 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<label th:text=${newform.name}></label>
+<form th:action="@{/hello/${name}}" th:object="${form}" method="GET">
+<p th:text="*{response}"></p>
+</form>
 </body>
 </html>

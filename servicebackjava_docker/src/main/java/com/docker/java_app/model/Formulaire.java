@@ -13,6 +13,18 @@ public class Formulaire {
 	private Integer id;
 	
 	private String name;
+	
+	private String response; 
+	
+	
+
+	public String getResponse() {
+		return response;
+	}
+
+	public String setResponse(String response) {
+		return this.response = response;
+	}
 
 	public Integer getId() {
 		return id;
@@ -29,6 +41,12 @@ public class Formulaire {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Formulaire [id=" + id + ", name=" + name + ", response=" + response + "]";
+	}
+
+
 	
 }
