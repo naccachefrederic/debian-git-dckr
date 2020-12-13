@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.docker.java_app.dao.FormulaireRepository;
+//import com.docker.java_app.dao.FormulaireRepository;
 import com.docker.java_app.model.Formulaire;
 
 @Controller
 //@RequestMapping(path="/dockergo")
 public class FormulaireController {
 
-	@Autowired
-	private FormulaireRepository formRepository;
+//	@Autowired
+//	private FormulaireRepository formRepository;
 	      
 	@GetMapping(path="/")
 	public String accueil(Model model) {
