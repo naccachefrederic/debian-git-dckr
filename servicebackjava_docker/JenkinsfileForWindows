@@ -4,6 +4,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+                bat 'cd servicebackjava_docker'
                 bat 'mvn compile'
                 bat 'mvn package'
       }
