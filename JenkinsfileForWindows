@@ -4,14 +4,13 @@ pipeline {
   stages {
     stage('build') {
       steps {
-                bat 'cd servicebackjava_docker'
                 bat 'mvn compile -f servicebackjava_docker/pom.xml'
                 bat 'mvn package -f servicebackjava_docker/pom.xml'
       }
     }
     stage('test') {
       steps {
-        bat 'java -jar servicebackjava_docker-0.0.1-SNAPSHOT.jar'
+        bat 'java -jar servicebackjava/target/servicebackjava_docker-0.0.1-SNAPSHOT.jar'
       }
     }
   }
