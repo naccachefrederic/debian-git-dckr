@@ -1,0 +1,17 @@
+pipeline {
+  agent any 
+  tools { maven 'maven' }
+  stages {
+    stage('build') {
+      steps {
+                bat 'mvn compile'
+                bat 'mvn package'
+      }
+    }
+    stage('test') {
+      steps {
+        bat 'java -jar servicebackjava_docker-0.0.1-SNAPSHOT.jar'
+      }
+    }
+  }
+}
